@@ -102,29 +102,46 @@ class LoginForm extends Component {
 
     return (
       <div className="login-form-container">
-        <img
-          src="https://img.freepik.com/free-vector/shopping-people-composition-text-surrounded-by-flat-icons-clothes-with-wallet-card-coin-vector-illustration_1284-80729.jpg?size=626&ext=jpg"
-          className="login-website-logo-mobile-img"
-          alt="website logo"
-        />
-        <img
-          src="https://img.freepik.com/free-vector/niche-service-marketplace-concept-illustration_114360-7303.jpg?size=626&ext=jpg"
-          className="login-img"
-          alt="website login"
-        />
-        <form className="form-container" onSubmit={this.submitForm}>
-          <img
-            src="https://img.freepik.com/free-vector/shopping-people-composition-text-surrounded-by-flat-icons-clothes-with-wallet-card-coin-vector-illustration_1284-80729.jpg?size=626&ext=jpg"
-            className="login-website-logo-desktop-img"
-            alt="website logo"
-          />
-          <div className="input-container">{this.renderUsernameField()}</div>
-          <div className="input-container">{this.renderPasswordField()}</div>
-          <button type="submit" className="login-button">
-            Login
-          </button>
-          {showSubmitError && <p className="error-message">*{errorMsg}</p>}
-        </form>
+        <div className="side-bar">
+          <h1 className="side-name">Board</h1>
+        </div>
+        <div className="side-bar-ver">
+          <h1 className="side-name-ver">Board</h1>
+        </div>
+        <div className="form-container">
+          <form onSubmit={this.submitForm}>
+            <div className="switch-board">
+              <h1 id="switchstatus" className="switch-status">
+                Sign In
+              </h1>
+              <p>Sign In to your account</p>
+              <div className="button-container">
+                <button id="offswitch" className="off-switch" type="button">
+                  <img
+                    className="google-img"
+                    src="https://cdn-icons-png.flaticon.com/128/300/300221.png"
+                    alt="Google"
+                  />
+                  Sign in with Google
+                </button>
+                <button id="onswitch" className="on-switch" type="button">
+                  <img
+                    className="google-img"
+                    src="https://cdn-icons-png.flaticon.com/128/179/179309.png"
+                    alt="Google"
+                  />
+                  Sign in with Apple
+                </button>
+              </div>
+            </div>
+            <div className="input-container">{this.renderUsernameField()}</div>
+            <div className="input-container">{this.renderPasswordField()}</div>
+            <button type="submit" className="login-button">
+              Login
+            </button>
+            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+          </form>
+        </div>
       </div>
     )
   }
